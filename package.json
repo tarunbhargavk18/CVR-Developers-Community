@@ -1,0 +1,15 @@
+{
+  "name": "cvr-developers-community",
+  "version": "1.0.0",
+  "description": "College Mini Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tarun, Surya, Sahana",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
