@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        content=" initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible"
-        content="ie=edge">
-        <title>Particles Login</title>
-        <link rel="stylesheet" href="style.css">
-
-    </head>
-    <body>
-        <div id="particles-js">
-        <div id="login">
-            <form>
-                <div>
-                    <label for="username">username</label>
-                    <br>
-                    <input type="text" placeholder="Username">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=" initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Particles Login</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+      <div id="particles-js">
+        <div class="dark-overlay">
+        <div class="container">
+          <div id="content">
+              <div class="row">
+                <img src="./mp-logo-white.png" height = 114px width = 372px alt="" srcset="" />
+            </div>
+            <div class="row p-2 mx-5 ml-5">
+                <div class="col">
+                    <button class="btn btn-sm btn-outline-light">Profiles</button>
                 </div>
-                <div>
-                    <label for="password">password</label>
-                    <br>
-                    <input type="text" placeholder="password">
+                <div class="col">
+                    <button class="btn btn-sm btn-outline-light">Login</button>
                 </div>
-                <input type="submit" value="login">
-
-            </form>
+                <div class="col">
+                    <button class="btn btn-sm btn-outline-light">Sign Up</button>
+                </div>
+            </div>
+            </div>
+          </div>
         </div>
-        </div>
-
-
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script>
-            particlesJS.load('particles-js','particles.json',function(){
-                console.log('particles.json loaded...');
-            });
-        </script>
-        <script src="app.js">
-
-        </script>
-    </body>
+      </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles.json", function() {
+        console.log("particles.json loaded...");
+      });
+    </script>
+    <script src="app.js"></script>
+  </body>
 </html>

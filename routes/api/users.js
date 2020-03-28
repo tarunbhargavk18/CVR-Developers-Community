@@ -1,5 +1,10 @@
 const express = require("express");
 const router = express.Router();
+
+//Password Hashing
+const bcrypt = require("bcrypt");
+
+//Validation 
 const { check, validationResult } = require("express-validator");
 
 //User Model
@@ -29,6 +34,7 @@ router.post(
     const { name, rollNumber, email, password } = req.body;
 
     try {
+
       //Check if the user exists already
       let user = await User.findOne({rollNumber});
 
@@ -36,6 +42,7 @@ router.post(
         res.status(400).json({errors:[{"message":"There exists an account already for this roll number"}]});
       }
 
+      //Creating a new user
       user = new User({
         name,
         rollNumber,
@@ -43,8 +50,11 @@ router.post(
         password
       })
 
+      await user.save();
+
       //Testing
-      res.send("User Route");
+      res.send("User Registered");
+    
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server Error");
