@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //Password Hashing
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 
 //Validation 
 const { check, validationResult } = require("express-validator");
@@ -28,7 +28,7 @@ router.post(
   async (req, res) => {
     const err = validationResult(req);
     if (!err.isEmpty()) {
-      return res.status(400).json({ errors: err.array() }); //Errors in the form on JSON array
+      return res.status(400).json({ errors: err.array() }); //Errors in the form of JSON array
     }
 
     const { name, rollNumber, email, password } = req.body;

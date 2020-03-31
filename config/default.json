@@ -1,3 +1,5 @@
 {
-    "mongoURI": "mongodb+srv://cvr-project-admin:project123@cluster0-zwah1.mongodb.net/test?retryWrites=true&w=majority" 
+    "mongoURI": "mongodb+srv://cvr-project-admin:project123@cluster0-zwah1.mongodb.net/test?retryWrites=true&w=majority",
+    "githubClientID":"34bfd6718cb3b15a72d4",
+    "githubSecret":"eb1731db9f436361387607f28893f78604fc52f5" 
 }
