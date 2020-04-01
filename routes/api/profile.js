@@ -1,18 +1,20 @@
+/*IMPORTS*/
+
 const express = require("express");
 const router = express.Router();
 const config = require("config");
 const axios = require("axios");
-//@todo Auth should come here
-
+const auth = require("../../middleware/auth");
 const { check, validationResult } = require("express-validator");
-
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+
+/*ROUTES*/
 
 // GET api/profile/me
 // It gets the current user's profile
 // Authenticated
-router.get("/me", async (req, res) => {
+router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.user.id
@@ -32,7 +34,7 @@ router.get("/me", async (req, res) => {
 // POST api/profile
 // Create or update a user profile
 // Authenticated
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   const {
     branch,
     bio,
@@ -71,6 +73,7 @@ router.post("/", async (req, res) => {
   try {
     let profile = await Profile.findOne({ user: req.user.id }); //Fetching the profile
 
+    //If Profile already exists
     if (profile) {
       //Update if profile already exists
       profile = await Profile.findOneAndUpdate(
@@ -90,7 +93,6 @@ router.post("/", async (req, res) => {
     console.error(err.message);
     res.status(500).send("Server Error");
   }
-  res.send("Hello");
 });
 
 // ROUTE: GET api/profile
@@ -109,28 +111,29 @@ router.get("/", async (req, res) => {
   }
 });
 
-// // ROUTE: GET api/profile/user/:user_id
-// // DESCRIPTION: Get profile by user ID
-// //
-// router.get("/user/:user_id", async (req, res) => {
-//     try {
-//       const profile = await Profile.findOne({user:req.params.user_id}).populate("user", [
-//         "name",
-//         "rollNumber"
-//       ]);
+// ROUTE: GET api/profile/user/:user_id
+// DESCRIPTION: Get profile by user ID
+// Public
+router.get("/user/:user_id", async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id
+    }).populate("user", ["name", "rollNumber"]);
 
-//       if(!profile) return res.status(400).json({msg:'Profile not found'})
-//       res.json(profile);
-//     } catch (err) {
-//       console.error(err.message);
-//       res.status(500).send("Server Error");
-//     }
-//   });
+    //Check if profile exists
+    if (!profile) return res.status(400).json({ msg: "Profile not found" });
+
+    res.json(profile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
 
 // ROUTE: DELETE api/profile
 // DESCRIPTION: Delete profile user and posts
 // Authenticated
-router.delete("/", async (req, res) => {
+router.delete("/", auth, async (req, res) => {
   try {
     //@todo remove posts
     //Remove Profile
@@ -149,7 +152,7 @@ router.delete("/", async (req, res) => {
 router.put(
   "/projects",
   [
-    //auth,
+    auth,
     [
       check("title", "Title is required")
         .not()
@@ -164,11 +167,13 @@ router.put(
 
     const { title, description, techstack } = req.body;
 
-    const newProject = {
-      title,
-      description,
-      techstack
-    };
+    const newProject = { title };
+    if (techstack) {
+      newProject.techstack = techstack.split(",").map(tech => tech.trim()); //Techstack has comma separated values
+    }
+    if (description) {
+      newProject.description = description;
+    }
 
     try {
       const profile = await Profile.findOne({ user: req.user.id });
@@ -185,7 +190,7 @@ router.put(
 // ROUTE: DELETE api/profile/projects/:project_id
 // DESCRIPTION: Delete profile project
 // Authenticated
-router.delete("/projects/:project_id", async (req, res) => {
+router.delete("/projects/:project_id", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id });
 
@@ -212,7 +217,8 @@ router.get("/github/:username", async (req, res) => {
       `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
     );
     const gitHubResponse = await axios.get(uri);
-    if (gitHubResponse.status != 200) { // This error handling is not working  
+    if (gitHubResponse.status != 200) {
+      // This error handling is not working
       return res.status(404).json({ msg: "Profile not found!" });
     }
     res.json(gitHubResponse.data);
@@ -221,4 +227,6 @@ router.get("/github/:username", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
+/*EXPORTS*/
 module.exports = router;
