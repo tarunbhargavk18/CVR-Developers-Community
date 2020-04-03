@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="img/mp-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Profiles</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/mp-logo.png" width="186" height="57" alt="" srcset=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="profiles.html">Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--PROFILES SECTION-->
+    <header class="bg-primary p-1">
+      <p class="display-4 text-light text-center">Profiles</p>
+    </header>
+    <section class="profiles">
+      <div class="container">
+        <div class="row profile m-3">
+          <div class="card border-primary" style="width: 100%;">
+            <div class="card-header">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col">
+                    <i class="far fa-5x fa-id-badge profile-avatar"></i>
+                  </div>
+                  <div class="col">
+                    <div class="row justify-content-center">
+                      <h4>Tarun Bhargav</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                      <p>17B81A12A5</p>
+                    </div>
+                    <div class="row small justify-content-center">
+                      <p>Department Of IT</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <ul>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> HTML
+                      </li>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> CSS
+                      </li>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> JavaScript
+                      </li>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> Node JS
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <a href="profile.html" class="btn btn-outline-primary"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row profile m-3">
+          <div class="card border-primary" style="width: 100%;">
+            <div class="card-header">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <i class="far fa-5x fa-id-badge profile-avatar"></i>
+                  </div>
+                  <div class="col">
+                    <div class="row justify-content-center">
+                      <h4>John Doe</h4>
+                    </div>
+                    <div class="row justify-content-center">
+                      <p>20B81A12A5</p>
+                    </div>
+                    <div class="row justify-content-center">
+                      <p>Department Of CSE</p>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <ul>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> HTML
+                      </li>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> CSS
+                      </li>
+                      <li class="text-primary">
+                        <i class="fas fa-check-circle"></i> JavaScript
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="row justify-content-center">
+                <a href="profile.html" class="btn btn-outline-primary"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer id="main-footer" class="text-center p-1 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h5>CVR Developers Community</h5>
+            <p>Copyright &copy; <span id="year"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>

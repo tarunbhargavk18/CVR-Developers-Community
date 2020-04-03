@@ -8,6 +8,12 @@ const ProfileSchema = new mongoose.Schema({
   branch: {
     type: String
   },
+  phone: {
+    type:String
+  },
+  email:{
+    type:String
+  },
   bio: {
     type: String
   },

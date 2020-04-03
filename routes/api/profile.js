@@ -45,7 +45,9 @@ router.post("/", auth, async (req, res) => {
     hackerrank,
     codechef,
     codeforces,
-    interviewBit
+    interviewBit,
+    phone,
+    email
   } = req.body;
 
   //Build Profile Object
@@ -54,6 +56,8 @@ router.post("/", auth, async (req, res) => {
   if (branch) profileFields.branch = branch;
   if (bio) profileFields.bio = bio;
   if (githubusername) profileFields.githubusername = githubusername;
+  if (phone) profileFields.phone = phone;
+  if (email) profileFields.email = email;
   if (skills) {
     profileFields.skills = skills.split(",").map(skill => skill.trim());
   }

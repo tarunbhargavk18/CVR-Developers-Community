@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="img/mp-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+        <div class="container">
+          <a class="navbar-brand" href="index.html"
+            ><img src="img/mp-logo.png" width="186" height="57" alt="" srcset=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="profiles.html">Profiles</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="register.html">Register</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!--LOGIN SECTION-->
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card mt-5">
+              <div class="card-header justify-content-center">
+                <div class="row justify-content-center">
+                  <i
+                    class="far fa-2x fa-user-circle text-primary"
+                    style="color: #400082;"
+                  ></i>
+                </div>
+                <div class="row justify-content-center">
+                  <p class="font-weight-bold m-2 h4">Register</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Full Name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                    <input
+                      type="text"
+                      placeholder="Roll Number"
+                      name="rollNumber"
+                      required
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      class="form-control"
+                      minLength="6"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="password"
+                      placeholder="Confirm Password"
+                      name="password2"
+                      class="form-control"
+                      minLength="6"
+                    />
+                  </div>
+                  <input
+                    type="submit"
+                    class="btn btn-primary float-right"
+                    value="Register"
+                  />
+                </form>
+                <small>Already have an account? <a href="login.html">Sign In</a></small>
+              </div>
+            </div>
+          </div>
+          <div class="col svg">
+            <img
+              src="img/undraw_code_typing_7jnv.svg"
+              height="500"
+              width="700"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer id="main-footer" class="text-center p-1 fixed-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h5>CVR Developers Community</h5>
+            <p>Copyright &copy; <span id="year"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>

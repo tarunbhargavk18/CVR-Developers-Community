@@ -29,7 +29,6 @@ router.post(
       min: 10,
       max: 10
     }),
-    check("email", "Please include a valid email").isEmail(),
     check("password", "Re-enter password with a minimum length of 5").isLength({
       min: 5
     })
@@ -42,7 +41,7 @@ router.post(
       return res.status(400).json({ errors: err.array() }); //Errors in the form of JSON array
     }
 
-    const { name, rollNumber, email, password } = req.body;
+    const { name, rollNumber, password } = req.body;
 
     try {
       //Check if the user exists already
@@ -63,7 +62,6 @@ router.post(
       user = new User({
         name,
         rollNumber,
-        email,
         password
       });
 
