@@ -196,4 +196,40 @@ router.post(
   }
 );
 
+//ROUTE: DELETE api/feed/comment/:id/:comment_id
+//Delete Comment on a post
+//Authenticated
+router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+
+    //Get comment
+    const comment = post.comments.find(
+      comment => comment.id == req.params.comment_id
+    );
+
+    //Make sure comment exists
+    if (!comment) {
+      return res.status(404).json({ msg: "Comment does not exist" });
+    }
+
+    //Check if comment is made by same user
+    if (comment.user.toString() != req.user.id) {
+      return res.status(401).json({ msg: "User not authorized" });
+    }
+
+    //Get index of the comment to be deleted
+    const removeIndex = post.comments
+      .map(comment => comment.user.toString())
+      .indexOf(req.user.id);
+
+    post.comments.splice(removeIndex, 1);
+    await post.save();
+    res.json(post.comments);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Sever Error");
+  }
+});
+
 module.exports = router;
