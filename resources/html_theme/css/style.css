@@ -4,10 +4,14 @@
 }
 body {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #fff;
   color: #333;
-  background: rgba(0, 0, 0, 0);
   font-family: 'Poppins', sans-serif;
+}
+.container{
+  padding:-15px;
 }
 #particles-js {
   background: rgb(0, 0, 0);
@@ -38,6 +42,9 @@ body {
   .svg {
       display: none;
   }
+  .profile-items p{
+      display:none;
+  }
 }
 
 #main-footer {
@@ -52,4 +59,24 @@ ul {
 
 .profile-avatar{
   margin-left: 50%;
+}
+
+.bg-black{
+  color: #fff;
+  background: #000;
+}
+
+a{
+  text-decoration: none !important;
+}
+
+#skills{
+  width: 100%;
+  height: 100%;
+}
+
+.line {
+  height: 1px;
+  background: #ccc;
+  margin: 1.5rem 0;
 }

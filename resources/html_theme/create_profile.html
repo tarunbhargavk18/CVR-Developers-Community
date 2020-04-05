@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="img/mp-icon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Create Profile</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/mp-logo.png" width="186" height="57" alt="" srcset=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="profiles.html">Profiles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feed.html">Feed</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="settings.html">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--CREATE PROFILE SECTION-->
+    <section class="container">
+      <div class="card px-5 pt-2">
+        <h1 class="large text-dark text-centner">
+          Create Your Profile
+        </h1>
+        <div class="line"></div>
+        <form class="form my-3">
+          <div class="form-group">
+            <select name="branch" class="form-control">
+              <option value="0">Select your Branch</option>
+              <option value="IT">IT</option>
+              <option value="CSE">CSE</option>
+              <option value="ECE">ECE</option>
+              <option value="MECH">MECH</option>
+              <option value="EEE">EEE</option>
+              <option value="CIVIL">CIVIL</option>
+              <option value="CSIT">CSIT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Email"
+              name="email"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Phone Number"
+              name="phone"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="* Skills"
+              name="skills"
+              class="form-control"
+            />
+            <small class="form-text"
+              >Please use comma separated values (eg.
+              HTML,CSS,JavaScript,PHP)</small
+            >
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Github Username"
+              name="githubusername"
+              class="form-control"
+            />
+            <small class="form-text"
+              >If you want your public repos on your profile, include your
+              username</small
+            >
+          </div>
+          <div class="form-group">
+            <textarea
+              placeholder="A short bio of yourself"
+              name="bio"
+              class="form-control"
+            ></textarea>
+            <small class="form-text">Tell us a little about yourself</small>
+          </div>
+
+          <div class="my-3">
+            <h4>Add Social Network Links</h4>
+          </div>
+
+          <div class="form-group social-input">
+            <div class="row">
+              <div class="col-1">
+                <i class="fab fa-twitter fa-2x"></i>
+              </div>
+              <div class="col-11">
+                <input
+                  type="text"
+                  placeholder="Twitter URL"
+                  name="twitter"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group social-input">
+            <div class="row">
+              <div class="col-1">
+                <i class="fab fa-linkedin fa-2x"></i>
+              </div>
+              <div class="col-11">
+                <input
+                  type="text"
+                  placeholder="Linkedin URL"
+                  name="linkedin"
+                  class="form-control"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="my-3">
+            <h4>Add Coding Platform Profile Links</h4>
+          </div>
+
+          <div class="form-group coding-input">
+            <input
+              type="text"
+              placeholder="Hackerrank URL"
+              name="hackerrank"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group coding-input">
+            <input
+              type="text"
+              placeholder="Codechef URL"
+              name="codechef"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group coding-input">
+            <input
+              type="text"
+              placeholder="Codeforces URL"
+              name="codeforces"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group coding-input">
+            <input
+              type="text"
+              placeholder="Interview Bit URL"
+              name="interviewbit"
+              class="form-control"
+            />
+          </div>
+
+          <input type="submit" class="btn btn-primary my-1" />
+          <a class="btn btn-light my-1" href="settings.html">Go Back</a>
+        </form>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer id="main-footer" class="text-center p-1 mt-3">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h5>CVR Developers Community</h5>
+            <p>Copyright &copy; <span id="year"></span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="http://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>
