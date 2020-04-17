@@ -6,10 +6,9 @@ const styles = {
   root: {
     fontFamily: "sans-serif",
     textAlign: "center",
-    height: "100%",
+    height: "80%",
     width: "100%",
-    backgroundImage: "linear-gradient(to right, #314755,#26a0da)",
-    overflow: "hidden !important"
+    backgroundImage: "linear-gradient(to right, #314755,#26a0da)"
   },
 };
 
@@ -62,7 +61,7 @@ export const Landing = () => {
           params={{
             particles: {
               number: {
-                value: 60,
+                value: 80,
               },
               size: {
                 value: 2,

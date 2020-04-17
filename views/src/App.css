@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -8,10 +8,10 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.container{
-  padding:-15px;
+.container {
+  padding: -15px;
 }
 #particles-js {
   background: rgb(0, 0, 0);
@@ -34,16 +34,16 @@ body {
   background-color: rgba(0, 0, 0, 0.288);
 }
 
-.nav-link{
+.nav-link {
   font-size: 18px;
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .svg {
-      display: none;
+    display: none;
   }
-  .profile-items p{
-      display:none;
+  .profile-items p {
+    display: none;
   }
 }
 
@@ -51,26 +51,30 @@ body {
   background: #f8f9fa;
   color: #000;
   font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3 rem; 
 }
 
 ul {
   list-style: none;
 }
 
-.profile-avatar{
+.profile-avatar {
   margin-left: 50%;
 }
 
-.bg-black{
+.bg-black {
   color: #fff;
   background: #000;
 }
 
-a{
+a {
   text-decoration: none !important;
 }
 
-#skills{
+#skills {
   width: 100%;
   height: 100%;
 }
@@ -79,4 +83,12 @@ a{
   height: 1px;
   background: #ccc;
   margin: 1.5rem 0;
+}
+
+#profile-header .name-area{
+  background-image: linear-gradient(to right,#c94b4b,#4b134f);
+}
+
+#profile-header .social{
+  color:#66b2fa;
 }

@@ -80,3 +80,11 @@ a{
   background: #ccc;
   margin: 1.5rem 0;
 }
+
+#profile-header .name-area{
+  background-image: linear-gradient(to right,#c94b4b,#4b134f);
+}
+
+#profile-header .social{
+  color:#66b2fa;
+}

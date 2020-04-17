@@ -9,8 +9,8 @@ export const Navbar = () => {
           <Link className="navbar-brand" to="/">
             <img
               src="img/mp-logo.png"
-              width="186"
-              height="57"
+              width="165"
+              height="54"
               alt=""
               srcset=""
             />
@@ -34,7 +34,7 @@ export const Navbar = () => {
                   Register
                 </Link>
               </li>
-              <li className="nav-item active">
+              <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login
                 </Link>

@@ -17,7 +17,7 @@ const User = require("../../models/User");
 router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
-      user: req.user.id
+      user: req.user.id,
     }).populate("user", ["name", "rollNumber"]);
 
     if (!profile) {
@@ -47,7 +47,7 @@ router.post("/", auth, async (req, res) => {
     codeforces,
     interviewBit,
     phone,
-    email
+    email,
   } = req.body;
 
   //Build Profile Object
@@ -59,7 +59,7 @@ router.post("/", auth, async (req, res) => {
   if (phone) profileFields.phone = phone;
   if (email) profileFields.email = email;
   if (skills) {
-    profileFields.skills = skills.split(",").map(skill => skill.trim());
+    profileFields.skills = skills.split(",").map((skill) => skill.trim());
   }
 
   //Build social object
@@ -106,7 +106,7 @@ router.get("/", async (req, res) => {
   try {
     const profiles = await Profile.find().populate("user", [
       "name",
-      "rollNumber"
+      "rollNumber",
     ]); //Get all profiles
     res.json(profiles);
   } catch (err) {
@@ -121,7 +121,7 @@ router.get("/", async (req, res) => {
 router.get("/user/:user_id", async (req, res) => {
   try {
     const profile = await Profile.findOne({
-      user: req.params.user_id
+      user: req.params.user_id,
     }).populate("user", ["name", "rollNumber"]);
 
     //Check if profile exists
@@ -155,14 +155,7 @@ router.delete("/", auth, async (req, res) => {
 // Authenticated
 router.put(
   "/projects",
-  [
-    auth,
-    [
-      check("title", "Title is required")
-        .not()
-        .isEmpty()
-    ]
-  ],
+  [auth, [check("title", "Title is required").not().isEmpty()]],
   async (req, res) => {
     const error = validationResult(req.body);
     if (!error.isEmpty()) {
@@ -173,7 +166,7 @@ router.put(
 
     const newProject = { title };
     if (techstack) {
-      newProject.techstack = techstack.split(",").map(tech => tech.trim()); //Techstack has comma separated values
+      newProject.techstack = techstack.split(",").map((tech) => tech.trim()); //Techstack has comma separated values
     }
     if (description) {
       newProject.description = description;
@@ -200,7 +193,7 @@ router.delete("/projects/:project_id", auth, async (req, res) => {
 
     //Getting index of the project to be deleted
     const removeIndex = profile.projects
-      .map(item => item.id)
+      .map((item) => item.id)
       .indexOf(req.params.project_id);
 
     profile.projects.splice(removeIndex, 1); // Remove the project
@@ -231,7 +224,6 @@ router.get("/github/:username", async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-
 
 /*EXPORTS*/
 module.exports = router;

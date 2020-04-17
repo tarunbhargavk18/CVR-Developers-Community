@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
 const Footer = () => {
+  
   return (
     <div>
-      <div id="main-footer" className="text-center p-1 fixed-bottom">
+      <div id="main-footer" className="text-center p-1">
         <div className="container">
           <div className="row">
             <div className="col">
