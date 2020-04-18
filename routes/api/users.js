@@ -22,16 +22,14 @@ const User = require("../../models/User");
 router.post(
   "/",
   [
-    check("name", "Name is required")
-      .not()
-      .isEmpty(),
+    check("name", "Name is required").not().isEmpty(),
     check("rollNumber", "Enter a valid Roll Number").isLength({
       min: 10,
-      max: 10
+      max: 10,
     }),
     check("password", "Re-enter password with a minimum length of 5").isLength({
-      min: 5
-    })
+      min: 5,
+    }),
   ],
   async (req, res) => {
     const err = validationResult(req);
@@ -49,12 +47,12 @@ router.post(
 
       //If a user already exists
       if (user) {
-        res.status(400).json({
+        return res.status(400).json({
           errors: [
             {
-              message: "There exists an account already for this roll number"
-            }
-          ]
+              msg: "User already exists for this Roll Number",
+            },
+          ],
         });
       }
 
@@ -62,7 +60,7 @@ router.post(
       user = new User({
         name,
         rollNumber,
-        password
+        password,
       });
 
       await user.save();
@@ -70,8 +68,8 @@ router.post(
       //Loggin user in after registering
       const payload = {
         user: {
-          id: user.id
-        }
+          id: user.id,
+        },
       };
 
       jwt.sign(

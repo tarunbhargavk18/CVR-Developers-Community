@@ -22,7 +22,7 @@ export const register = ({ name, rollNumber, password }) => async (
       payload: res.data,
     });
   } catch (err) {
-    // console.log(err.response.data);
+    console.log(err.response.data);
     const errors = err.response.data.errors; //errors array from api
     // console.log(errors);
 
