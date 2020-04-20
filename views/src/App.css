@@ -95,4 +95,10 @@ a {
 
 .alert{
   position: absolute;
+  left: 30%;
+  right: 30%;
+}
+
+#root{
+  height: 100vh;
 }

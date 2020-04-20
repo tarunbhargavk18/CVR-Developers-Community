@@ -31,9 +31,9 @@ router.post(
   [
     check("rollNumber", "Enter a valid Roll Number").isLength({
       min: 10,
-      max: 10
+      max: 10,
     }),
-    check("password", "Password is required").exists()
+    check("password", "Password is required").exists(),
   ],
   async (req, res) => {
     const err = validationResult(req);
@@ -52,9 +52,9 @@ router.post(
         return res.status(400).json({
           errors: [
             {
-              message: "Invalid Credentials"
-            }
-          ]
+              message: "Invalid Credentials",
+            },
+          ],
         });
       }
 
@@ -67,8 +67,8 @@ router.post(
 
       const payload = {
         user: {
-          id: user.id
-        }
+          id: user.id,
+        },
       };
 
       jwt.sign(
