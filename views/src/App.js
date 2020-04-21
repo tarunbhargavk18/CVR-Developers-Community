@@ -7,6 +7,8 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
+import Settings from "./components/settings/Settings";
+import PrivateRoute from "./components/routing/PrivateRoute";
 import PageNotFound from "./components/layout/PageNotFound";
 
 //Redux
@@ -26,18 +28,16 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router>  
-          <Navbar />
-          <Route exact path="/" component={Landing} />
-          
-            <Alert />
-            <div className="container">
-            <Switch>
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-            </Switch>
-          </div>
-          <Footer />
+      <Router>
+        <Navbar />
+        <Alert />
+        <Route exact path="/" component={Landing} />
+          <Switch>
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/settings" component={Settings} />
+          </Switch>
+        <Footer />
       </Router>
     </Provider>
   );

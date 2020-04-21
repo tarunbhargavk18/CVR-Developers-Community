@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Particles from "react-particles-js";
+import {connect} from "react-redux";
+import propTypes from "prop-types";
 
 const styles = {
   root: {
@@ -12,7 +14,10 @@ const styles = {
   },
 };
 
-export const Landing = () => {
+export const Landing = ({isAuthenticated}) => {
+  if(isAuthenticated){
+    return <Redirect to="/settings"/>
+  }
   return (
     <div style={styles.root} >
       <div id="content">
@@ -75,4 +80,13 @@ export const Landing = () => {
   );
 };
 
-export default Landing;
+Landing.propTypes = {
+  isAuthenticated: propTypes.bool,
+}
+
+const mapStateToProps = state=>({
+  isAuthenticated: state.auth.isAuthenticated,
+
+})
+
+export default connect(mapStateToProps)(Landing);

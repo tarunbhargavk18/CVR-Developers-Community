@@ -8,6 +8,11 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
+        <Link to='/settings' className="nav-link">
+          Settings
+        </Link>
+      </li>
+      <li className="nav-item">
         <a onClick={logout} className="nav-link" href="#!">
           Logout
         </a>
