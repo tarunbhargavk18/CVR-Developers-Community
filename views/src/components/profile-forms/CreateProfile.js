@@ -40,11 +40,11 @@ const CreateProfile = ({createProfile, history}) => {
 
   const onSubmit = (e) => {
       e.preventDefault();
-      createProfile(formData, history )
+      createProfile(formData, history );
   }
 
   return (
-    <section className="container my-4">
+    <section className="container my-4 mt-5">
       <div className="card px-5 pt-2">
         <h1 className=" text-dark">Create Your Profile</h1>
         <div className="line"></div>
