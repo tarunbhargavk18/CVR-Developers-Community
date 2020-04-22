@@ -34,70 +34,87 @@ router.get("/me", auth, async (req, res) => {
 // POST api/profile
 // Create or update a user profile
 // Authenticated
-router.post("/", auth, async (req, res) => {
-  const {
-    branch,
-    bio,
-    skills,
-    githubusername,
-    twitter,
-    linkedin,
-    hackerrank,
-    codechef,
-    codeforces,
-    interviewBit,
-    phone,
-    email,
-  } = req.body;
+router.post(
+  "/",
+  [
+    auth,
+    [
+      check("Branch", "Branch is required").not().isEmpty(),
+      check("Skills", "Skills are required").not().isEmpty(),
+    ],
+  ],
+  async (req, res) => {
+    const err = validationResult(req);
 
-  //Build Profile Object
-  const profileFields = {};
-  profileFields.user = req.user.id;
-  if (branch) profileFields.branch = branch;
-  if (bio) profileFields.bio = bio;
-  if (githubusername) profileFields.githubusername = githubusername;
-  if (phone) profileFields.phone = phone;
-  if (email) profileFields.email = email;
-  if (skills) {
-    profileFields.skills = skills.split(",").map((skill) => skill.trim());
-  }
-
-  //Build social object
-  profileFields.social = {};
-  if (twitter) profileFields.social.twitter = twitter;
-  if (linkedin) profileFields.social.linkedin = linkedin;
-
-  //Build coding profiles object
-  profileFields.codingprofiles = {};
-  if (hackerrank) profileFields.codingprofiles.hackerrank = hackerrank;
-  if (codechef) profileFields.codingprofiles.codechef = codechef;
-  if (codeforces) profileFields.codingprofiles.codeforces = codeforces;
-  if (interviewBit) profileFields.codingprofiles.interviewBit = interviewBit;
-
-  try {
-    let profile = await Profile.findOne({ user: req.user.id }); //Fetching the profile
-
-    //If Profile already exists
-    if (profile) {
-      //Update if profile already exists
-      profile = await Profile.findOneAndUpdate(
-        { user: req.user.id },
-        { $set: profileFields },
-        { new: true }
-      );
-
-      return res.json(profile);
+    //Handling validation errors
+    if (!err.isEmpty()) {
+      return res.status(400).json({ errors: err.array() }); //Errors in the form of JSON array
     }
 
-    //Create new profile if does not exist already
-    profile = new Profile(profileFields);
-    await profile.save();
-    res.json(profile);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
+    const {
+      branch,
+      bio,
+      skills,
+      githubusername,
+      twitter,
+      linkedin,
+      hackerrank,
+      codechef,
+      codeforces,
+      interviewBit,
+      phone,
+      email,
+    } = req.body;
+
+    //Build Profile Object
+    const profileFields = {};
+    profileFields.user = req.user.id;
+    if (branch) profileFields.branch = branch;
+    if (bio) profileFields.bio = bio;
+    if (githubusername) profileFields.githubusername = githubusername;
+    if (phone) profileFields.phone = phone;
+    if (email) profileFields.email = email;
+    if (skills) {
+      profileFields.skills = skills.split(",").map((skill) => skill.trim());
+    }
+
+    //Build social object
+    profileFields.social = {};
+    if (twitter) profileFields.social.twitter = twitter;
+    if (linkedin) profileFields.social.linkedin = linkedin;
+
+    //Build coding profiles object
+    profileFields.codingprofiles = {};
+    if (hackerrank) profileFields.codingprofiles.hackerrank = hackerrank;
+    if (codechef) profileFields.codingprofiles.codechef = codechef;
+    if (codeforces) profileFields.codingprofiles.codeforces = codeforces;
+    if (interviewBit) profileFields.codingprofiles.interviewBit = interviewBit;
+
+    try {
+      let profile = await Profile.findOne({ user: req.user.id }); //Fetching the profile
+
+      //If Profile already exists
+      if (profile) {
+        //Update if profile already exists
+        profile = await Profile.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: profileFields },
+          { new: true }
+        );
+
+        return res.json(profile);
+      }
+
+      //Create new profile if does not exist already
+      profile = new Profile(profileFields);
+      await profile.save();
+      res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
   }
-});
+);
 
 // ROUTE: GET api/profile
 // DESCRIPTION: Get all profiles

@@ -6,7 +6,8 @@ const ProfileSchema = new mongoose.Schema({
     ref: "user"
   },
   branch: {
-    type: String
+    type: String,
+    required:true
   },
   phone: {
     type:String
@@ -18,7 +19,8 @@ const ProfileSchema = new mongoose.Schema({
     type: String
   },
   skills: {
-    type: [String]
+    type: [String],
+    required:true
   },
   githubusername: {
     type: String

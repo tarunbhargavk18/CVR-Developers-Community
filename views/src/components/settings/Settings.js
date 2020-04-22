@@ -1,4 +1,5 @@
 import React, { useEffect, Fragment } from "react";
+import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
@@ -17,16 +18,24 @@ const Settings = ({
     <LoadingSpinner />
   ) : (
     <Fragment>
-        <header class="bg-dark p-2 mb-5">
-          <p class="display-4 text-light text-center lead">
-            Settings
-          </p>
-        </header>
-        <section class="container">
-          <p class="lead m-3">
-            <i class="fas fa-user"></i> Welcome {user && user.name}
-          </p>
-        </section>
+      <header class="bg-dark p-2 mb-5">
+        <p class="display-4 text-light text-center lead">Settings</p>
+      </header>
+      <section class="container">
+        <p class="lead m-3">
+          <i class="fas fa-user"></i> Welcome {user && user.name}
+        </p>
+        {profile !== null ? (
+          <Fragment>has</Fragment>
+        ) : (
+          <Fragment>
+            <p>You do not have a profile yet, please create one!</p>
+            <Link to="/createProfile" className="btn btn-sm btn-dark">
+              Create Profile
+            </Link>
+          </Fragment>
+        )}
+      </section>
     </Fragment>
   );
 };
