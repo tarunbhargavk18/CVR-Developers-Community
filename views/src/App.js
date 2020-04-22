@@ -9,6 +9,7 @@ import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
 import Settings from "./components/settings/Settings";
 import CreateProfile from "./components/profile-forms/CreateProfile";
+import EditProfile from "./components/profile-forms/EditProfile"
 import PrivateRoute from "./components/routing/PrivateRoute";
 import PageNotFound from "./components/layout/PageNotFound";
 
@@ -38,6 +39,7 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute exact path="/createProfile" component={CreateProfile} />
+            <PrivateRoute exact path="/editProfile" component={EditProfile} />
           </Switch>
           </Router>
         <Footer />

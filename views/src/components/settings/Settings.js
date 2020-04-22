@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
 import LoadingSpinner from "../layout/LoadingSpinner";
+import SettingsActions from "./SettingsActions";
 
 const Settings = ({
   getCurrentProfile,
@@ -26,7 +27,9 @@ const Settings = ({
           <i class="fas fa-user"></i> Welcome {user && user.name}
         </p>
         {profile !== null ? (
-          <Fragment>has</Fragment>
+          <Fragment>
+            <SettingsActions/>
+          </Fragment>
         ) : (
           <Fragment>
             <p>You do not have a profile yet, please create one!</p>
