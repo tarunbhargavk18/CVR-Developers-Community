@@ -32,9 +32,9 @@ export const Landing = ({isAuthenticated}) => {
         </div>
         <div className="row p-2 mx-5 ml-5">
           <div className="col">
-            <a role="button" className="btn btn-sm btn-outline-light" href="#">
+            <Link role="button" className="btn btn-sm btn-outline-light" to="/profiles">
               Profiles
-            </a>
+            </Link>
           </div>
           <div className="col">
             <Link

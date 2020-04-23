@@ -7,6 +7,11 @@ import { logout } from "../../actions/auth";
 export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className="navbar-nav ml-auto">
+       <li className="nav-item">
+        <Link className="nav-link" to="/profiles">
+          Profiles
+        </Link>
+      </li>
       <li className="nav-item">
         <Link to='/settings' className="nav-link">
           Settings
@@ -23,9 +28,9 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const publicLinks = (
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
-        <a className="nav-link" href="#!">
+        <Link className="nav-link" to="/profiles">
           Profiles
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/register">
@@ -49,6 +54,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
               src="img/mp-logo.png"
               width="165"
               height="54"
+              className="img img-fluid"
               alt=""
               srcset=""
             />

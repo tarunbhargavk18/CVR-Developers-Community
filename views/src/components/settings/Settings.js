@@ -1,17 +1,17 @@
 import React, { useEffect, Fragment } from "react";
-import {Link} from "react-router-dom";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import propTypes from "prop-types";
 import { connect } from "react-redux";
-import { getCurrentProfile } from "../../actions/profile";
+import { getCurrentProfile, deleteAccount } from "../../actions/profile";
 import LoadingSpinner from "../layout/LoadingSpinner";
 import SettingsActions from "./SettingsActions";
 import Projects from "./Projects";
-
 
 const Settings = ({
   getCurrentProfile,
   auth: { user },
   profile: { profile, loading },
+  deleteAccount
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -21,7 +21,7 @@ const Settings = ({
     <LoadingSpinner />
   ) : (
     <Fragment>
-      <header class="bg-dark p-2 mb-5">
+      <header class="bg-dark p-2 my-4">
         <p class="display-4 text-light text-center lead">Settings</p>
       </header>
       <section class="container">
@@ -30,8 +30,14 @@ const Settings = ({
         </p>
         {profile !== null ? (
           <Fragment>
-            <SettingsActions/>
-            <Projects projects={profile.projects}/>
+            <SettingsActions />
+            <Projects projects={profile.projects} />
+            <div class="my-2">
+              <button className="btn btn-danger" onClick={()=> deleteAccount()}>
+                <i className="fas fa-user-minus mr-1"></i>
+                Delete My Account
+              </button>
+            </div> 
           </Fragment>
         ) : (
           <Fragment>
@@ -47,9 +53,10 @@ const Settings = ({
 };
 
 Settings.propTypes = {
-  getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired,
+  getCurrentProfile: propTypes.func.isRequired,
+  auth: propTypes.object.isRequired,
+  profile: propTypes.object.isRequired,
+  deleteAccount: propTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -57,4 +64,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Settings);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount })(Settings);
