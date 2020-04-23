@@ -3,64 +3,64 @@ const mongoose = require("mongoose");
 const ProfileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "user"
+    ref: "user",
   },
   branch: {
     type: String,
-    required:true
+    required: true,
   },
   phone: {
-    type:String
+    type: String,
   },
-  email:{
-    type:String
+  email: {
+    type: String,
   },
   bio: {
-    type: String
+    type: String,
   },
   skills: {
     type: [String],
-    required:true
+    required: true,
   },
   githubusername: {
-    type: String
+    type: String,
   },
   projects: [
     {
       title: {
         type: String,
-        required: true
+        required: true,
       },
       description: {
-        type: String
+        type: String,
       },
       techstack: {
-        type: [String]
-      }
-    }
+        type: [String],
+      },
+    },
   ],
   social: {
     linkedin: {
-      type: String
+      type: String,
     },
     twitter: {
-      type: String
-    }
+      type: String,
+    },
   },
   codingprofiles: {
     hackerrank: {
-      type: String
+      type: String,
     },
     codechef: {
-      type: String
+      type: String,
     },
     codeforces: {
-      type: String
+      type: String,
     },
     interviewBit: {
-      type: String
-    }
-  }
+      type: String,
+    },
+  },
 });
 
 Profile = mongoose.model("profile", ProfileSchema);

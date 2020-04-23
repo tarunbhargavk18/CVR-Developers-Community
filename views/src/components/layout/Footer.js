@@ -3,20 +3,18 @@ import React from "react";
 const Footer = () => {
   
   return (
-    <div>
-      <div id="main-footer" className="text-center p-1">
+    <footer id="main-footer" className="text-center p-2  bg-light">
         <div className="container">
           <div className="row">
             <div className="col">
               <h5>CVR Developers Community</h5>
               <p>
-                Copyright &copy; <span id="year"></span>
+                Copyright &copy;<span id="year"></span>
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    </footer>
   );
 };
 

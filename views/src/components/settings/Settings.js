@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
 import LoadingSpinner from "../layout/LoadingSpinner";
 import SettingsActions from "./SettingsActions";
+import Projects from "./Projects";
+
 
 const Settings = ({
   getCurrentProfile,
@@ -29,6 +31,7 @@ const Settings = ({
         {profile !== null ? (
           <Fragment>
             <SettingsActions/>
+            <Projects projects={profile.projects}/>
           </Fragment>
         ) : (
           <Fragment>

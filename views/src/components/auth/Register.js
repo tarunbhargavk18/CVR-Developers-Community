@@ -35,7 +35,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <div className="container">
-      <div className="row my-5">
+      <div className="row mt-5">
         <div className="col-md-4">
           <div className="card shadow mt-5 mx-2">
             <div className="card-header justify-content-center">

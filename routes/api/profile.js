@@ -168,7 +168,7 @@ router.delete("/", auth, async (req, res) => {
 });
 
 // ROUTE: PUT api/profile/projects
-// DESCRIPTION: Add profile projects
+// DESCRIPTION: Add profile project
 // Authenticated
 router.put(
   "/projects",

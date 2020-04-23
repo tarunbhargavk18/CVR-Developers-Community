@@ -2,6 +2,18 @@
 * {
   box-sizing: border-box;
 }
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
 body {
   margin: 0;
   font-size: 14px;
@@ -10,6 +22,7 @@ body {
   color: #333;
   font-family: "Poppins", sans-serif;
 }
+
 .container {
   padding: -15px;
 }
@@ -47,16 +60,6 @@ body {
   }
 }
 
-#main-footer {
-  background: #f8f9fa;
-  color: #000;
-  font-size: 12px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 3 rem; 
-}
-
 ul {
   list-style: none;
 }
@@ -85,18 +88,41 @@ a {
   margin: 1.5rem 0;
 }
 
-#profile-header .name-area{
-  background-image: linear-gradient(to right,#c94b4b,#4b134f);
+#profile-header .name-area {
+  background-image: linear-gradient(to right, #c94b4b, #4b134f);
 }
 
-#profile-header .social{
-  color:#66b2fa;
+#profile-header .social {
+  color: #66b2fa;
 }
 
-.alert{
+.alert {
   position: absolute;
   left: 30%;
   right: 30%;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  font-size: 12px
+ }
 
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 4rem; /* height of your footer */
+ }
+
+/* #main-footer {
+  background: #f8f9fa;
+  color: #000;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;  
+} */

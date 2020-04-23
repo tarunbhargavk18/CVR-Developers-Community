@@ -29,7 +29,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <div className="container">
-      <div className="row my-5">
+      <div className="row mt-5">
         <div className="col-md svg">
           <img
             src="img/undraw_Group_chat_unwm.svg"
@@ -40,7 +40,7 @@ const Login = ({ login, isAuthenticated }) => {
           />
         </div>
         <div className="col-md-4">
-          <div className="card shadow mt-5 mx-3">
+          <div className="card shadow mt-5 mx-3" style={{top:"10%"}}>
             <div className="card-header justify-content-center">
               <div className="row justify-content-center">
                 <i

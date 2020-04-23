@@ -9,7 +9,8 @@ import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
 import Settings from "./components/settings/Settings";
 import CreateProfile from "./components/profile-forms/CreateProfile";
-import EditProfile from "./components/profile-forms/EditProfile"
+import EditProfile from "./components/profile-forms/EditProfile";
+import AddProject from "./components/profile-forms/AddProject";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import PageNotFound from "./components/layout/PageNotFound";
 
@@ -31,18 +32,25 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <Navbar />
-        <Alert />
-        <Route exact path="/" component={Landing} />
+        <div className="main-container">
+          <Navbar />
+          <Alert />
+          <Route exact path="/" component={Landing} />
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <PrivateRoute exact path="/settings" component={Settings} />
-            <PrivateRoute exact path="/createProfile" component={CreateProfile} />
+            <PrivateRoute
+              exact
+              path="/createProfile"
+              component={CreateProfile}
+            />
             <PrivateRoute exact path="/editProfile" component={EditProfile} />
+            <PrivateRoute exact path="/addProject" component={AddProject} />
           </Switch>
-          </Router>
-        <Footer />
+          <Footer />
+        </div>
+      </Router>
     </Provider>
   );
 };
