@@ -16,7 +16,7 @@ const ProfileItem = ({
           <div className="container">
             <div className="row justify-content-center">
               <div className="col">
-                <i className="far fa-5x fa-id-badge profile-avatar"></i>
+              <i className="far fa-5x fa-id-badge profile-avatar"></i>
               </div>
               <div className="col">
                 <div className="row justify-content-center">
