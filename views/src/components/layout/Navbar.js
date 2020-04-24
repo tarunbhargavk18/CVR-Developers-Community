@@ -1,20 +1,20 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import propTypes from "prop-types";
 import { logout } from "../../actions/auth";
-import logo from "../../img/mp-logo.png"
+import logo from "../../img/mp-logo.png";
 
 export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul className="navbar-nav ml-auto">
-       <li className="nav-item">
+      <li className="nav-item">
         <Link className="nav-link" to="/profiles">
           Profiles
         </Link>
       </li>
       <li className="nav-item">
-        <Link to='/settings' className="nav-link">
+        <Link to="/settings" className="nav-link">
           Settings
         </Link>
       </li>
@@ -57,7 +57,6 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
               height="54"
               className="img img-fluid"
               alt=""
-              
             />
           </Link>
           <button
@@ -68,7 +67,9 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            {!loading && <Fragment>{isAuthenticated ? authLinks : publicLinks}</Fragment>}
+            {!loading && (
+              <Fragment>{isAuthenticated ? authLinks : publicLinks}</Fragment>
+            )}
           </div>
         </div>
       </nav>

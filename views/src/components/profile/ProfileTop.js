@@ -12,7 +12,7 @@ const ProfileTop = ({
   },
 }) => {
   return (
-    <section id="profile-header" className="shadow">
+    <section id="profile-header" className="shadow-sm">
       <div className="container">
         <div className="row text-white name-area p-4">
           <div className="col-md-8">

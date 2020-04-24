@@ -7,6 +7,8 @@ import { getProfileById } from "../../actions/profile";
 import ProfileTop from "./ProfileTop";
 import ProfileSkills from "./ProfileSkills";
 import ProfileProject from "./ProfileProject";
+import ProfileGithub from "./ProfileGithub";
+import ProfileContact from "./ProfileContact";
 
 const Profile = ({
   getProfileById,
@@ -36,26 +38,39 @@ const Profile = ({
               )}
 
             <ProfileTop profile={profile} />
-            <ProfileSkills profile={profile} />
-            <section id="projects" className="shadow bg-white p-3 my-3">
-              <div class="container">
-                <div class="row justify-content-center">
-                  <h2 class="text-primary">Projects</h2>
+
+            <div className="row my-3">
+              <div className="col-md mb-1">
+                <ProfileSkills profile={profile} />
+              </div>
+              <div className="col-md mb-1">
+                <ProfileContact profile={profile} />
+              </div>
+            </div>
+
+            <section id="projects" className="shadow-sm bg-white p-3 my-3">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <h2 className="text-primary">Projects</h2>
                 </div>
                 <div class="line"></div>
-                {profile.projects.length > 0 ? (
-                  <Fragment>
-                      <div className="row">
-                    {profile.projects.map((project) => (
-                      <ProfileProject key={project._id} project={project} />
-                    ))}
-                    </div>
-                  </Fragment>
-                ) : (
-                  <h4>No Projects</h4>
-                )}
+                <div className="row justify-centent-center">
+                  {profile.projects.length > 0 ? (
+                    <Fragment>
+                      {profile.projects.map((project) => (
+                        <ProfileProject key={project._id} project={project} />
+                      ))}
+                    </Fragment>
+                  ) : (
+                    <h4>No Projects</h4>
+                  )}
+                </div>
               </div>
             </section>
+
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </Fragment>
       )}

@@ -4,15 +4,15 @@ import propTypes from "prop-types";
 
 const ProfileSkills = ({ profile: { skills } }) => {
   return (
-    <section id="skills" className="bg-light p-3 my-3 shadow">
+    <section id="skills" className="bg-light p-3 shadow-sm" style={{height:"100%"}}> 
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
           <h2 class="text-success">Skills</h2>
         </div>
         <div class="line"></div>
         <div class="row justify-content-center p-3">
           {skills.map((skill, index) => (
-            <div key={index} className="p-1">
+            <div key={index} className="p-1 lead">
               <i class="fa fa-check p-1"></i> {skill}
             </div>
           ))}

@@ -9,7 +9,7 @@ import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
 import Settings from "./components/settings/Settings";
 import Profiles from "./components/profiles/Profiles";
-import Profile from "./components/profile/Profile"
+import Profile from "./components/profile/Profile";
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import AddProject from "./components/profile-forms/AddProject";
