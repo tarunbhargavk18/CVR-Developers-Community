@@ -71,7 +71,7 @@ const EditProfile = ({
           ? ""
           : profile.codingprofiles.interviewbit,
     });
-  }, [loading]); //Will run only once and when it loads
+  }, [loading, getCurrentProfile]); //Will run only once and when it loads
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });

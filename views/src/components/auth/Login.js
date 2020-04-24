@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-
+import loginsvg from "../../img/undraw_Group_chat_unwm.svg"
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
 import propTypes from "prop-types";
@@ -32,11 +32,11 @@ const Login = ({ login, isAuthenticated }) => {
       <div className="row mt-5">
         <div className="col-md svg">
           <img
-            src="img/undraw_Group_chat_unwm.svg"
+            src={loginsvg}
             width="100%"
             height="100%"
             alt=""
-            srcset=""
+            
           />
         </div>
         <div className="col-md-4">

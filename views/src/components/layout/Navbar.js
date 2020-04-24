@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import propTypes from "prop-types";
 import { logout } from "../../actions/auth";
+import logo from "../../img/mp-logo.png"
 
 export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -51,12 +52,12 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img
-              src="img/mp-logo.png"
+              src={logo}
               width="165"
               height="54"
               className="img img-fluid"
               alt=""
-              srcset=""
+              
             />
           </Link>
           <button

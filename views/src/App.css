@@ -107,8 +107,8 @@ footer {
   bottom: 0;
   width: 100%;
   height: 4rem;
-  font-size: 12px
- }
+  font-size: 12px;
+}
 
 .main-container {
   min-height: 100vh; /* will cover the 100% of viewport */
@@ -116,7 +116,7 @@ footer {
   display: block;
   position: relative;
   padding-bottom: 4rem; /* height of your footer */
- }
+}
 
 /* #main-footer {
   background: #f8f9fa;
@@ -127,6 +127,7 @@ footer {
   height: 4rem;  
 } */
 
-header{
-  background-image: linear-gradient(to right, #373B44, #4286f4);
+header {
+  background-image: linear-gradient(to right, #373b44, #4286f4);
 }
+

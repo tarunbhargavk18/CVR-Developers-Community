@@ -11,22 +11,23 @@ const ProfileItem = ({
 }) => {
   return (
     <div className="row profile m-3">
-      <div className="card" style={{width: "100%"}}>
+      <div className="card" style={{ width: "100%" }}>
         <div className="card-header">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col">
-              <i className="far fa-5x fa-id-badge profile-avatar"></i>
+                <i className="far fa-5x fa-id-badge profile-avatar"></i>
               </div>
               <div className="col">
                 <div className="row justify-content-center">
                   <h4>{name}</h4>
                 </div>
                 <div className="row justify-content-center">
-                  <p>{rollNumber}</p>
-                </div>
-                <div className="row small justify-content-center">
-                  <p>Department Of {branch}</p>
+                  <p className="text-center">
+                    {rollNumber}
+                    <br />
+                    {branch !== "0" && `Department Of ${branch}`}
+                  </p>
                 </div>
               </div>
               <div className="col">

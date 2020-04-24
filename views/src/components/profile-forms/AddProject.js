@@ -4,7 +4,7 @@ import propTypes from "prop-types";
 import { connect } from "react-redux";
 import { addProject } from "../../actions/profile";
 
-const AddProject = ({addProject, history}) => {
+const AddProject = ({ addProject, history }) => {
   const [formData, setFormData] = useState({
     title: "",
     techstack: "",
@@ -18,9 +18,9 @@ const AddProject = ({addProject, history}) => {
   };
 
   const onSubmit = (e) => {
-      e.preventDefault();
-      addProject(formData, history);
-  }
+    e.preventDefault();
+    addProject(formData, history);
+  };
 
   return (
     <section className="container my-4">
@@ -28,7 +28,7 @@ const AddProject = ({addProject, history}) => {
         <h1 className="large text-dark">Add a Project</h1>
         <div className="line"></div>
         <small>* - required field</small>
-        <form className="form my-3" onSubmit ={e => onSubmit(e)}>
+        <form className="form my-3" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -75,6 +75,8 @@ const AddProject = ({addProject, history}) => {
   );
 };
 
-AddProject.propTypes = {};
+AddProject.propTypes = {
+  addProject: propTypes.func.isRequired,
+};
 
-export default connect(null, { addProject })(AddProject);
+export default connect(null, { addProject })(withRouter(AddProject));

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import Particles from "react-particles-js";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import propTypes from "prop-types";
+import whiteLogo from "../../img/mp-logo-white.png";
 
 const styles = {
   root: {
@@ -14,25 +15,29 @@ const styles = {
   },
 };
 
-export const Landing = ({isAuthenticated}) => {
-  if(isAuthenticated){
-    return <Redirect to="/settings"/>
+export const Landing = ({ isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to="/settings" />;
   }
   return (
-    <div style={styles.root} >
+    <div style={styles.root}>
       <div id="content">
         <div className="row">
           <img
-            src="img/mp-logo-white.png"
+            src={whiteLogo}
             height="114px"
             width="372px"
             alt=""
-            srcset=""
+            className="img img-fluid"
           />
         </div>
         <div className="row p-2 mx-5 ml-5">
           <div className="col">
-            <Link role="button" className="btn btn-sm btn-outline-light" to="/profiles">
+            <Link
+              role="button"
+              className="btn btn-sm btn-outline-light"
+              to="/profiles"
+            >
               Profiles
             </Link>
           </div>
@@ -56,37 +61,38 @@ export const Landing = ({isAuthenticated}) => {
           </div>
         </div>
       </div>
-      <Particles
-        params={{
-          particles: {
-            number: {
-              value: 80,
-            },
-            size: {
-              value: 2,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: true,
-                mode: "repulse",
+      <div className="particles">
+        <Particles
+          params={{
+            particles: {
+              number: {
+                value: 80,
+              },
+              size: {
+                value: 2,
               },
             },
-          },
-        }}
-      />
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "repulse",
+                },
+              },
+            },
+          }}
+        />
+      </div>
     </div>
   );
 };
 
 Landing.propTypes = {
   isAuthenticated: propTypes.bool,
-}
+};
 
-const mapStateToProps = state=>({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
-
-})
+});
 
 export default connect(mapStateToProps)(Landing);

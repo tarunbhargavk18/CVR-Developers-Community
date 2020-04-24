@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
+import registersvg from "../../img/undraw_code_typing_7jnv.svg";
 import propTypes from "prop-types";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
@@ -108,13 +109,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           </div>
         </div>
         <div className="col-md svg">
-          <img
-            src="img/undraw_code_typing_7jnv.svg"
-            width="100%"
-            height="90%"
-            alt=""
-            srcset=""
-          />
+          <img src={registersvg} width="100%" height="90%" alt="" />
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ const Projects = ({ projects, deleteProject }) => {
       <td>{project.techstack.join(",")}</td>
       <td>
         <button
-          class="btn btn-danger"
+          class="btn btn-sm btn-danger"
           onClick={() => deleteProject(project._id)}
         >
           Delete
@@ -21,7 +21,7 @@ const Projects = ({ projects, deleteProject }) => {
 
   return (
     <Fragment>
-      <h2 className="my-3">Project Credentials</h2>
+      <h2 className="my-4">Project Credentials</h2>
       <table className="table table-responsive">
         <thead className="thead-light">
           <tr>

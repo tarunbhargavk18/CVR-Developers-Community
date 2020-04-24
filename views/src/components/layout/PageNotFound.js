@@ -9,7 +9,7 @@ const PageNotFound = () => {
           height="600"
           width="600"
           alt=""
-          srcset=""
+          
         />
       </div>
     </div>

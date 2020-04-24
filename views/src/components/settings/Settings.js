@@ -15,7 +15,7 @@ const Settings = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
 
   return loading && profile === null ? (
     <LoadingSpinner />

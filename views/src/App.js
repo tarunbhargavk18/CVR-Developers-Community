@@ -8,7 +8,8 @@ import Register from "./components/auth/Register";
 import Footer from "./components/layout/Footer";
 import Alert from "./components/layout/Alert";
 import Settings from "./components/settings/Settings";
-import Profiles from "./components/profile/Profiles";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile"
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import AddProject from "./components/profile-forms/AddProject";
@@ -41,6 +42,7 @@ const App = () => {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/profile/:id" component={Profile} />
             <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute
               exact
