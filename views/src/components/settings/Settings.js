@@ -21,8 +21,8 @@ const Settings = ({
     <LoadingSpinner />
   ) : (
     <Fragment>
-      <header class="bg-dark p-2 my-4">
-        <p class="display-4 text-light text-center lead">Settings</p>
+      <header class="bg-dark p-1 my-4">
+        <p class="display-4 text-light text-center lead">SETTINGS</p>
       </header>
       <section class="container">
         <p class="lead m-3">

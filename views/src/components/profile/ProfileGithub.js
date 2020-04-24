@@ -14,15 +14,14 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
         <div class="row justify-content-center">
           <h2 class="text-danger">Github Repositories</h2>
         </div>
-        <div class="line"></div>
-        <div class="row p-3">
+        <div class="row m-3">
           {repos === null ? (
             <LoadingSpinner />
           ) : (
             repos.map((repo) => (
               <div
                 key={repo._id}
-                class="repo col-5 bg-white p-1 m-2"
+                class="repo col-md bg-white p-2 m-2"
               >
                 <div>
                   <h4>

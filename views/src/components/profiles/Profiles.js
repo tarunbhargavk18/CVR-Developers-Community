@@ -15,9 +15,9 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <LoadingSpinner/>
       ) : (
         <Fragment>
-          <header className="bg-dark p-2 mb-5">
-            <p className="display-4 text-light text-center font-weight-bold">
-              Profiles
+          <header className="bg-dark p-1 mb-5">
+            <p className="display-4 text-light text-center lead">
+              PROFILES
             </p>
           </header>
           <section className="profiles">

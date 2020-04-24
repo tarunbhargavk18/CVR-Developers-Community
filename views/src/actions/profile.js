@@ -7,7 +7,7 @@ import {
   ACCOUNT_DELETED,
   CLEAR_PROFILE,
   GET_PROFILES,
-  GET_REPOS
+  GET_REPOS,
 } from "./types";
 
 //Get current user's profile
@@ -20,6 +20,8 @@ export const getCurrentProfile = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    dispatch({ type: CLEAR_PROFILE });
+
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
@@ -27,10 +29,9 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-
 // Get all profiles
 export const getProfiles = () => async (dispatch) => {
-  dispatch({type: CLEAR_PROFILE}) 
+  dispatch({ type: CLEAR_PROFILE });
 
   try {
     const res = await axios.get("/api/profile");
@@ -50,7 +51,6 @@ export const getProfiles = () => async (dispatch) => {
 
 // Get profile by ID
 export const getProfileById = (userId) => async (dispatch) => {
-
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
@@ -68,7 +68,6 @@ export const getProfileById = (userId) => async (dispatch) => {
 
 // Get GitHub Repos
 export const getGithubRepos = (username) => async (dispatch) => {
-
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
 
@@ -187,4 +186,3 @@ export const deleteAccount = () => async (dispatch) => {
     }
   }
 };
-

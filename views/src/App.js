@@ -13,6 +13,7 @@ import Profile from "./components/profile/Profile";
 import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import AddProject from "./components/profile-forms/AddProject";
+import Posts from "./components/posts/Posts";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import PageNotFound from "./components/layout/PageNotFound";
 
@@ -51,6 +52,7 @@ const App = () => {
             />
             <PrivateRoute exact path="/editProfile" component={EditProfile} />
             <PrivateRoute exact path="/addProject" component={AddProject} />
+            <PrivateRoute exact path="/feed" component={Posts} />
           </Switch>
           <Footer />
         </div>

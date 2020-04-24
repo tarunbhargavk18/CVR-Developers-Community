@@ -53,7 +53,6 @@ const Profile = ({
                 <div className="row justify-content-center">
                   <h2 className="text-primary">Projects</h2>
                 </div>
-                <div class="line"></div>
                 <div className="row justify-centent-center">
                   {profile.projects.length > 0 ? (
                     <Fragment>
