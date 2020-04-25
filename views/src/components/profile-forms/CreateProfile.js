@@ -17,7 +17,7 @@ const CreateProfile = ({createProfile, history}) => {
     hackerrank: "",
     codechef: "",
     codeforces: "",
-    interviewbit: "",
+    interviewBit: "",
   });
 
   const {
@@ -32,7 +32,7 @@ const CreateProfile = ({createProfile, history}) => {
     hackerrank,
     codechef,
     codeforces,
-    interviewbit,
+    interviewBit,
   } = formData;
 
   const onChange = (e) =>
@@ -48,15 +48,17 @@ const CreateProfile = ({createProfile, history}) => {
       <div className="card px-5 pt-2">
         <h1 className=" text-dark">Create Your Profile</h1>
         <div className="line"></div>
-        <form className="form my-3" onSubmit={e => onSubmit(e)}>
+        <small>* - required field</small>
+        <form className="form my-4" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <select
               name="branch"
               className="form-control"
               value={branch}
+              required
               onChange={(e) => onChange(e)}
             >
-              <option value="0">Select your Branch</option>
+              <option value="0">* Select your Branch</option>
               <option value="IT">IT</option>
               <option value="CSE">CSE</option>
               <option value="ECE">ECE</option>
@@ -69,10 +71,11 @@ const CreateProfile = ({createProfile, history}) => {
           <div className="form-group">
             <input
               type="text"
-              placeholder="Email"
+              placeholder="* Email"
               name="email"
               className="form-control"
               value={email}
+              required
               onChange={(e) => onChange(e)}
             />
           </div>
@@ -94,6 +97,7 @@ const CreateProfile = ({createProfile, history}) => {
               className="form-control"
               value={skills}
               onChange={(e) => onChange(e)}
+              required
             />
             <small className="form-text">
               Please use comma separated values (eg. HTML,CSS,JavaScript,C)
@@ -124,7 +128,7 @@ const CreateProfile = ({createProfile, history}) => {
             <small className="form-text">Tell us a little about yourself</small>
           </div>
 
-          <div className="my-3">
+          <div className="my-4">
             <h4>Add Social Network Links</h4>
           </div>
 
@@ -164,7 +168,7 @@ const CreateProfile = ({createProfile, history}) => {
             </div>
           </div>
 
-          <div className="my-3">
+          <div className="my-4">
             <h4>Add Coding Platform Profile Links</h4>
           </div>
 
@@ -205,13 +209,13 @@ const CreateProfile = ({createProfile, history}) => {
             <input
               type="text"
               placeholder="Interview Bit URL"
-              name="interviewbit"
+              name="interviewBit"
               className="form-control"
-              value={interviewbit}
+              value={interviewBit}
               onChange={(e) => onChange(e)}
             />
           </div>
-          <input type="submit" className="btn btn-primary my-2 mr-3" />
+          <input type="submit" className="btn btn-primary   my-2 mr-3" />
           <Link className="btn btn-dark my-1" to="/settings">
             Go Back
           </Link>

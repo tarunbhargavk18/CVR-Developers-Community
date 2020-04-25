@@ -9,20 +9,18 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
     getGithubRepos(username);
   }, [getGithubRepos]);
   return (
-    <section id="github" className="bg-light shadow-sm p-3 my-3">
+    <section id="github" className="bg-white shadow-sm p-3 my-4">
       <div class="container">
-        <div class="row justify-content-center">
-          <h2 class="text-danger">Github Repositories</h2>
+        <div class="row justify-content-center h2 text-dark">
+          <i class="fab fa-github-square mr-2"></i>
+          Github Repositories
         </div>
         <div class="row m-3">
           {repos === null ? (
             <LoadingSpinner />
           ) : (
             repos.map((repo) => (
-              <div
-                key={repo._id}
-                class="repo col-md bg-white p-2 m-2"
-              >
+              <div key={repo._id} class="repo col-md bg-light p-2 m-2">
                 <div>
                   <h4>
                     <a
@@ -43,7 +41,9 @@ const ProfileGithub = ({ username, getGithubRepos, repos }) => {
                     <li class="badge badge-dark m-1">
                       Watchers: {repo.watchers_count}
                     </li>
-                    <li class="badge badge-light m-1">Forks: {repo.forks_count}</li>
+                    <li class="badge badge-light m-1">
+                      Forks: {repo.forks_count}
+                    </li>
                   </ul>
                 </div>
               </div>

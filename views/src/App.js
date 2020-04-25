@@ -14,6 +14,7 @@ import CreateProfile from "./components/profile-forms/CreateProfile";
 import EditProfile from "./components/profile-forms/EditProfile";
 import AddProject from "./components/profile-forms/AddProject";
 import Posts from "./components/posts/Posts";
+import Post from "./components/post/Post";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import PageNotFound from "./components/layout/PageNotFound";
 
@@ -38,8 +39,8 @@ const App = () => {
         <div className="main-container">
           <Navbar />
           <Alert />
-          <Route exact path="/" component={Landing} />
           <Switch>
+            <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
@@ -53,6 +54,8 @@ const App = () => {
             <PrivateRoute exact path="/editProfile" component={EditProfile} />
             <PrivateRoute exact path="/addProject" component={AddProject} />
             <PrivateRoute exact path="/feed" component={Posts} />
+            <PrivateRoute exact path="/feed/:id" component={Post} />
+            <Route component={PageNotFound} />
           </Switch>
           <Footer />
         </div>

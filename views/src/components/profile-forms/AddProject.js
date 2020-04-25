@@ -28,7 +28,7 @@ const AddProject = ({ addProject, history }) => {
         <h1 className="large text-dark">Add a Project</h1>
         <div className="line"></div>
         <small>* - required field</small>
-        <form className="form my-3" onSubmit={(e) => onSubmit(e)}>
+        <form className="form my-4" onSubmit={(e) => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
@@ -43,7 +43,7 @@ const AddProject = ({ addProject, history }) => {
           <div className="form-group">
             <input
               type="text"
-              placeholder="Tech Stack"
+              placeholder="* Tech Stack"
               name="techstack"
               className="form-control"
               required
@@ -65,7 +65,7 @@ const AddProject = ({ addProject, history }) => {
               onChange={(e) => onChange(e)}
             ></textarea>
           </div>
-          <input type="submit" className="btn btn-primary my-1" />
+          <input type="submit" className="btn btn-primary   my-1" />
           <Link className="btn btn-light ml-2 my-1" to="/settings">
             Go Back
           </Link>

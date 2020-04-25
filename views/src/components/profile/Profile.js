@@ -9,6 +9,7 @@ import ProfileSkills from "./ProfileSkills";
 import ProfileProject from "./ProfileProject";
 import ProfileGithub from "./ProfileGithub";
 import ProfileContact from "./ProfileContact";
+import CodingProfiles from "./CodingProfiles"
 
 const Profile = ({
   getProfileById,
@@ -26,7 +27,7 @@ const Profile = ({
       ) : (
         <Fragment>
           <div class="container">
-            <Link to="/profiles" className="btn btn-sm btn-dark my-3">
+            <Link to="/profiles" className="btn btn-sm btn-dark my-4">
               Back To Profiles
             </Link>
             {auth.isAuthenticated &&
@@ -39,7 +40,7 @@ const Profile = ({
 
             <ProfileTop profile={profile} />
 
-            <div className="row my-3">
+            <div className="row my-4">
               <div className="col-md mb-1">
                 <ProfileSkills profile={profile} />
               </div>
@@ -48,10 +49,11 @@ const Profile = ({
               </div>
             </div>
 
-            <section id="projects" className="shadow-sm bg-white p-3 my-3">
+            <section id="projects" className="shadow-sm bg-white p-3 my-4">
               <div className="container">
-                <div className="row justify-content-center">
-                  <h2 className="text-primary">Projects</h2>
+                <div className="row justify-content-center h2 text-dark">
+                <i class="fas fa-tasks mr-2"></i>
+                  Projects
                 </div>
                 <div className="row justify-centent-center">
                   {profile.projects.length > 0 ? (
@@ -67,9 +69,14 @@ const Profile = ({
               </div>
             </section>
 
+            {profile.codingprofiles && (
+              <CodingProfiles profile={profile} />
+            )}
+
             {profile.githubusername && (
               <ProfileGithub username={profile.githubusername} />
             )}
+
           </div>
         </Fragment>
       )}

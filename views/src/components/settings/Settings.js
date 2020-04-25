@@ -25,7 +25,7 @@ const Settings = ({
         <p class="display-4 text-light text-center lead">SETTINGS</p>
       </header>
       <section class="container">
-        <p class="lead m-3">
+        <p class="lead my-4">
           <i class="fas fa-user"></i> Welcome {user && user.name}
         </p>
         {profile !== null ? (

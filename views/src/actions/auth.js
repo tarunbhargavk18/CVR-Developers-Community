@@ -51,12 +51,11 @@ export const register = ({ name, rollNumber, password }) => async (
     });
     dispatch(loadUser());
   } catch (err) {
-    console.log(err.response.data);
     const errors = err.response.data.errors; //errors array from api
-    // console.log(errors);
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+      console.log(errors);
     }
     dispatch({
       type: REGISTER_FAIL,
@@ -84,10 +83,7 @@ export const login = (rollNumber, password) => async (dispatch) => {
 
     dispatch(loadUser());
   } catch (err) {
-    console.log(err.response.data);
     const errors = err.response.data.errors; //errors array from api
-    // console.log(errors);
-
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }

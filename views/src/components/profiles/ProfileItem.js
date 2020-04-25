@@ -10,43 +10,33 @@ const ProfileItem = ({
   },
 }) => {
   return (
-    <div className="row profile m-3">
-      <div className="card" style={{ width: "100%" }}>
-        <div className="card-header">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col">
-                <i className="far fa-5x fa-id-badge profile-avatar"></i>
-              </div>
-              <div className="col">
-                <div className="row justify-content-center">
+    <div className="row shadow-sm profile m-3">
+      <div className="card" style={{ width: "100%", height: "100%" }}>
+        <div className="card-body container">
+          <div className="row justify-content-center">
+            <div className="col-8">
+              <div className="row justify-content-center">
+                <Link to={`/profile/${_id}`} className=" ">
                   <h4>{name}</h4>
-                </div>
-                <div className="row justify-content-center">
-                  <p className="text-center">
-                    {rollNumber}
-                    <br />
-                    {branch !== "0" && `Department Of ${branch}`}
-                  </p>
-                </div>
+                </Link>
               </div>
-              <div className="col">
-                <ul>
-                  {skills.slice(0, 4).map((skill, index) => (
-                    <li className="text-primary" key={index}>
-                      <i className={`fas fa-check-circle`}></i> {skill}
-                    </li>
-                  ))}
-                </ul>
+              <div className="row justify-content-center">
+                <p className="text-center">
+                  {rollNumber}
+                  <br />
+                  {branch !== "0" && `Department Of ${branch}`}
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="card-body">
-          <div className="row justify-content-center">
-            <Link to={`/profile/${_id}`} className="btn btn-outline-primary">
-              View
-            </Link>
+            <div className="col-4">
+              <ul>
+                {skills.slice(0, 4).map((skill, index) => (
+                  <li className="text-primary" key={index}>
+                    <i className={`fas fa-check-circle`}></i> {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

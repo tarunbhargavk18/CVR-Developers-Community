@@ -98,7 +98,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 </div>
                 <input
                   type="submit"
-                  className="btn btn-primary float-right"
+                  className="btn btn-primary   float-right"
                   value="Register"
                 />
               </form>

@@ -12,16 +12,14 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   return (
     <Fragment>
       {loading ? (
-        <LoadingSpinner/>
+        <LoadingSpinner />
       ) : (
         <Fragment>
           <header className="bg-dark p-1 mb-5">
-            <p className="display-4 text-light text-center lead">
-              PROFILES
-            </p>
+            <p className="display-4 text-light text-center lead">PROFILES</p>
           </header>
-          <section className="profiles">
-            <div className="container">
+          <section className="profiles container">
+            <div className="m-5">
               {profiles.length > 0 ? (
                 profiles.map((profile) => (
                   <ProfileItem key={profile._id} profile={profile} />

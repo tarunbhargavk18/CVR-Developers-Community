@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import propTypes from "prop-types";
 
 const ProfileSkills = ({ profile: { skills } }) => {
   return (
-    <section id="skills" className="bg-light p-3 shadow-sm" style={{height:"100%"}}> 
+    <section
+      id="skills"
+      className="bg-light p-3 shadow-sm"
+      style={{ height: "100%" }}
+    >
       <div class="container">
-        <div class="row">
-          <h2 class="text-success">Skills</h2>
+        <div class="row h2 justify-content-center text-dark">
+        <i class="far fa-star mr-2"></i>
+          Skills
         </div>
-        <div class="line"></div>
         <div class="row justify-content-center p-3">
           {skills.map((skill, index) => (
             <div key={index} className="p-1 lead">

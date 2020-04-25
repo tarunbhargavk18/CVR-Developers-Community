@@ -9,7 +9,7 @@ const styles = {
   root: {
     fontFamily: "sans-serif",
     textAlign: "center",
-    height: "80%",
+    height: "100%",
     width: "100%",
     backgroundImage: "linear-gradient(to right, #314755,#26a0da)",
   },
@@ -23,37 +23,33 @@ export const Landing = ({ isAuthenticated }) => {
     <div style={styles.root}>
       <div id="content">
         <div className="row">
-          <img
-            src={whiteLogo}
-            height="114px"
-            width="372px"
-            alt=""
-            className="img img-fluid"
-          />
-        </div>
-        <div className="row p-2 mx-5 ml-5">
-          <div className="col">
+          <div className="col-12">
+            <img
+              src={whiteLogo}
+              height="114px"
+              width="372px"
+              alt=""
+              className="img img-fluid"
+            />
+          </div>
+          <div className="col-12 p-2 mx-5 ml-5">
             <Link
               role="button"
-              className="btn btn-sm btn-outline-light"
+              className="btn btn-sm btn-outline-light m-1"
               to="/profiles"
             >
               Profiles
             </Link>
-          </div>
-          <div className="col">
             <Link
               role="button"
-              className="btn btn-sm btn-outline-light"
+              className="btn btn-sm btn-outline-light m-1"
               to="/login"
             >
               Login
             </Link>
-          </div>
-          <div className="col">
             <Link
               role="button"
-              className="btn btn-sm btn-outline-light"
+              className="btn btn-sm btn-outline-light m-1"
               to="/register"
             >
               Register
@@ -61,8 +57,10 @@ export const Landing = ({ isAuthenticated }) => {
           </div>
         </div>
       </div>
+
       <div className="particles">
         <Particles
+          height="79vh"
           params={{
             particles: {
               number: {

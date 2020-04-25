@@ -52,7 +52,7 @@ router.post(
         return res.status(400).json({
           errors: [
             {
-              message: "Invalid Credentials",
+              msg: "Invalid Credentials",
             },
           ],
         });
